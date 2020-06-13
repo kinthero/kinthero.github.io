@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kinthero.github.io/</id>
     <title>kinthero</title>
-    <updated>2020-05-30T05:55:39.692Z</updated>
+    <updated>2020-06-13T08:59:22.926Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kinthero.github.io/"/>
     <link rel="self" href="https://kinthero.github.io/atom.xml"/>
@@ -10,4 +10,40 @@
     <logo>https://kinthero.github.io/images/avatar.png</logo>
     <icon>https://kinthero.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, kinthero</rights>
+    <entry>
+        <title type="html"><![CDATA[WSL配置]]></title>
+        <id>https://kinthero.github.io/post/wsl-pei-zhi/</id>
+        <link href="https://kinthero.github.io/post/wsl-pei-zhi/">
+        </link>
+        <updated>2020-06-13T08:57:00.000Z</updated>
+        <content type="html"><![CDATA[<p><code>wsl</code>安装好了之后，在windows商店下载完成<code>ubuntu</code>。</p>
+<p>首先配置镜像源，因为默认的ubuntu服务器下载速度在国内太慢了。</p>
+<p>配置镜像源需要就修改<code>sources</code>文件，我们先复制一份</p>
+<pre><code class="language-bash">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+</code></pre>
+<p>然后打开该文件</p>
+<pre><code class="language-bash">sudo vim /etc/apt/sources.list
+</code></pre>
+<p>到<a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">清华镜像</a>找到适合自己的配置，比如我就是18.04LTS版本的，把它替换原来的文件内容。不会使用<code>vim</code>可以用<code>nano</code>，替换完成之后<code>ctrl+o</code>保存，回车，<code>ctrl+x</code>退出。</p>
+<pre><code># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+
+# 预发布软件源，不建议启用
+# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+</code></pre>
+<p>修改完成之后需要更新软件源和所有软件</p>
+<pre><code class="language-bash">sudo apt-get update
+sudo apt-get upgrade
+</code></pre>
+<p>之后下载速度就会快很多了。</p>
+]]></content>
+    </entry>
 </feed>
