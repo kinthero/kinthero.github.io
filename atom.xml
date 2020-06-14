@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kinthero.github.io/</id>
     <title>kinthero</title>
-    <updated>2020-06-14T15:03:59.281Z</updated>
+    <updated>2020-06-14T15:05:07.102Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kinthero.github.io/"/>
     <link rel="self" href="https://kinthero.github.io/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://kinthero.github.io/images/avatar.png</logo>
     <icon>https://kinthero.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, kinthero</rights>
+    <entry>
+        <title type="html"><![CDATA[图片测试]]></title>
+        <id>https://kinthero.github.io/post/tu-pian-ce-shi/</id>
+        <link href="https://kinthero.github.io/post/tu-pian-ce-shi/">
+        </link>
+        <updated>2020-06-14T15:04:54.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://kinthero.github.io//post-images/1592147034262.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Windows基础软件推荐]]></title>
         <id>https://kinthero.github.io/post/windows-ji-chu-ruan-jian-tui-jian/</id>
@@ -145,8 +154,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted
 <pre><code class="language-bash">sudo apt-get update
 sudo apt-get upgrade
 </code></pre>
-<p>之后下载速度就会快很多了。<br>
-<img src="https://kinthero.github.io//post-images/1592147034262.jpg" alt="" loading="lazy"></p>
+<p>之后下载速度就会快很多了。</p>
 ]]></content>
     </entry>
 </feed>
