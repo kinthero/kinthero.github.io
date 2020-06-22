@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>python环境安装配置--windows | kinthero</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kinthero.github.io//favicon.ico?v=1592824189382">
+<link rel="stylesheet" href="https://kinthero.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+安装anaconda发行版
+python安装包除了官网版本，还有很多的发行版本，如：anaconda，wxpython等等。本文使用的是anaconda的发行版，发行版的有点是自带了很多的安装包，不需要自己再去手动安装，同时它提供的con..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kinthero.github.io/">
+        <img src="https://kinthero.github.io//images/avatar.png?v=1592824189382" class="site-logo">
+        <h1 class="site-title">kinthero</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      随便写写
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://kinthero.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">python环境安装配置--windows</h2>
+            <div class="post-date">2020-06-22</div>
+            
+            <div class="post-content" v-pre>
+              <img src="D:/Documents/Notes/Typora/learn/assets/python环境安装配置--windows/python环境安装配置.png" alt="pythonenv" style="zoom:80%;" />
+<h2 id="安装anaconda发行版">安装anaconda发行版</h2>
+<p>python安装包除了官网版本，还有很多的发行版本，如：anaconda，wxpython等等。本文使用的是anaconda的发行版，发行版的有点是自带了很多的安装包，不需要自己再去手动安装，同时它提供的conda包管理和环境配置工具也比较实用。</p>
+<blockquote>
+<ol>
+<li>
+<p><a href="https://repo.anaconda.com/archive/Anaconda3-2020.02-Windows-x86_64.exe">anaconda下载地址</a></p>
+</li>
+<li>
+<p>完整的anaconda安装包其实比较大，如果电脑空间不足或者并没有那么多库的需求，自己愿意手动安装的，可以使用anaconda官网提供的mini版本--miniconda。<a href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe">miniconda下载地址</a></p>
+</li>
+<li>
+<p>以上链接都是64位windows版本，需要其他版本请移步<a href="https://www.anaconda.com/products/individual">anaconda</a>，<a href="https://docs.conda.io/en/latest/miniconda.html#windows-installers">miniconda</a>。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="anaconda安装步骤">anaconda安装步骤</h3>
+<ol>
+<li>双击运行，next。</li>
+</ol>
+<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622112037918.png" alt="image-20200622112037918" style="zoom:80%;" />
+<ol start="2">
+<li>选择同意I agree。</li>
+</ol>
+<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622112158879.png" alt="image-20200622112158879" style="zoom:80%;" />
+<ol start="3">
+<li>如果不是需要windows多个用户环境都使用，可以直接默认just me，否则勾选All Users。next。</li>
+</ol>
+<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622112241910.png" alt="image-20200622112241910" style="zoom:80%;" />
+<ol start="4">
+<li>选择安装路径，这里使用默认路径。next。</li>
+</ol>
+<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622112957069.png" alt="image-20200622112957069" style="zoom:80%;" />
+<ol start="5">
+<li>第一个添加anconda到系统环境变量，可以不用添加，如果之后需要，也可以手动添加。第二个注册为默认python环境，我这里不推荐，实际上不管什么ide都会让你自己去选择使用的python环境。install。</li>
+</ol>
+<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622113141942.png" alt="image-20200622113141942" style="zoom:80%;" />
+<ol start="6">
+<li>等待安装</li>
+</ol>
+<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622113529231.png" alt="image-20200622113529231" style="zoom:80%;" />
+<ol start="7">
+<li>安装完成，next。</li>
+</ol>
+<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622123522165.png" alt="image-20200622123522165" style="zoom:80%;" />
+<ol start="8">
+<li>提醒可以安装pycharm，不用管，next。</li>
+</ol>
+<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622123624037.png" alt="image-20200622123624037" style="zoom:80%;" />
+<ol start="9">
+<li>最后完成，finish。</li>
+</ol>
+<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622123741834.png" alt="image-20200622123741834" style="zoom:80%;" />
+<p>到这里就安装好了anaconda，miniconda同理安装就可以。</p>
+<h2 id="anaconda基础功能">anaconda基础功能</h2>
+<p>安装完成后，主要有这么几个东西</p>
+<ul>
+<li>anaconda navigator，管理anaconda的一个图形界面窗口，不经常使用。</li>
+<li>anaconda powershell prompt/anaconda prompt，以powershell或者cmd打开命令行，主要用来管理安装包和新建工作环境。</li>
+<li>jupyter notebook笔记本形式的python编辑器，适合用于数据分析。</li>
+<li>spyder类似于matlab界面的python编辑器。</li>
+</ul>
+<p>在这里说一点点命令行相关的东西。</p>
+<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622123955309.png" alt="image-20200622123955309" style="zoom:80%;" />
+<h3 id="anaconda包和虚拟环境管理">anaconda包和虚拟环境管理</h3>
+<p>打开anaconda powershell prompt/anaconda prompt。输入以下命令就可以执行对应操作。</p>
+<ol>
+<li>anaconda包管理</li>
+</ol>
+<p>查看安装了什么包</p>
+<pre><code>conda list
+</code></pre>
+<p>使用``conda` 安装/删除/更新包</p>
+<pre><code>conda install package
+conda uninstall/remove package
+conda update package
+</code></pre>
+<p>使用``pip`安装/删除/更新包</p>
+<pre><code>pip install package
+pip uninstall package
+pip install --upgrade package
+</code></pre>
+<p>相对来说更加推荐使用pip，然后使用参数<code>-i</code>，加上一个国内镜像源，下载速度更快，比如使用豆瓣镜像源</p>
+<pre><code>pip install numpy -i https://pypi.douban.com/simple
+</code></pre>
+<ol start="2">
+<li>anaconda虚拟环境管理</li>
+</ol>
+<p>有时候可能我们需要使用python3，有时候可能需要使用python2。有时候我们可能需要使用numpy1.0版本，也有时候可能需要使用numpy2.0版本。为了实现在一台电脑上可以使用不同版本的python或者第三方库，可以通过建立不同的虚拟环境实现对他们的隔离。</p>
+<p>查看已经建立的环境，默认是在base的环境</p>
+<pre><code class="language-powershell">conda env list
+or
+conda info -e
+</code></pre>
+<p>使用<code>conda</code>新建/删除环境</p>
+<pre><code>conda create -n your_env_name python=x.x
+conda remove -n your_env_name --all
+</code></pre>
+<p>删除某个环境的某个第三方库</p>
+<pre><code>conda remove -n your_env_name package
+</code></pre>
+<p>使用conda激活/退出环境</p>
+<pre><code>activate your_env_name
+deactivate your_env_name
+</code></pre>
+<blockquote>
+<ol>
+<li>conda默认的下载源在国内下载速度比较慢，可以添加镜像源使得第三方库下载速度更快。可以如下添加清华镜像源。</li>
+</ol>
+<pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes 在包后面显示来源
+</code></pre>
+<ol start="2">
+<li><code>virtualenv</code>也是一个python的虚拟环境库，没有conda的同学可以学习一下，这里不赘述。</li>
+</ol>
+</blockquote>
+<h2 id="配置vscode环境">配置vscode环境</h2>
+<p>觉得jupyter和spyder足够使用的可以不用管这一步，喜欢更美观的代码编辑器可以继续往下看。vscode是微软出品的一个代码编辑器，有着丰富的插件，对python的支持已经十分完善。</p>
+<h3 id="vscode安装">vscode安装</h3>
+<p>vscode<a href="https://code.visualstudio.com/">下载地址</a>，下载之后正常安装就可以。</p>
+<h3 id="vscode插件推荐">vscode插件推荐</h3>
+<p>打开vscode之后，按住<code>ctrl+shift+p</code>，输入<code>ext install package</code>就可以安装相关的包，或者点击<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622131505706.png" alt="image-20200622131505706" style="zoom:25%;" />图标，在<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622131550789.png" alt="image-20200622131550789" style="zoom:25%;" /></p>
+<p>搜索也可以安装。</p>
+<p>推荐插件列表</p>
+<ul>
+<li>python
+<ul>
+<li>微软官方python插件，最主要的插件</li>
+</ul>
+</li>
+<li>rainbow brackets
+<ul>
+<li>括号插件，用不同颜色区分不同括号对</li>
+</ul>
+</li>
+<li>vscode-icons
+<ul>
+<li>美化图标显示</li>
+</ul>
+</li>
+<li>Prettier - Code formatter
+<ul>
+<li>代码格式化</li>
+</ul>
+</li>
+<li>Chinese (Simplified) Language Pack for Visual Studio Code
+<ul>
+<li>中文语言包</li>
+</ul>
+</li>
+<li>One Dark Pro
+<ul>
+<li>更好看些的主题</li>
+</ul>
+</li>
+</ul>
+<h3 id="vscode运行代码">vscode运行代码</h3>
+<p>vscode支持运行python脚本文件，同时也支持运行jupyter notebook文件。</p>
+<ol>
+<li>vscode运行python脚本文件</li>
+</ol>
+<p>右键-在终端运行python文件</p>
+<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622172203248.png" alt="image-20200622172203248" style="zoom:80%;" />
+<ol start="2">
+<li>vscode运行.ipynb文件</li>
+</ol>
+<p>新建一个<code>.ipynb</code>文件之后，双击文件打开。输入代码后，执行<code>ctrl+enter</code>运行当前块，执行<code>shift+enter</code>执行当前块并跳转到下一个块，如果下方没有块，则在下方插入块。另外jupyter也有很多方便的快捷键，A在上方插入块，B在下方插入块，DD删除块等等。</p>
+<figure data-type="image" tabindex="1"><img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622172600979.png" alt="image-20200622172600979" loading="lazy"></figure>
+<p>另外它还支持查看变量值，点击<img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622173046834.png" alt="image-20200622173046834" style="zoom:50%;" />，这是多了一个<code>Variables</code>，在里面就可以看到变量当前取值了。</p>
+<figure data-type="image" tabindex="2"><img src="D:/Documents/Notes/Typora/assets/Untitled/image-20200622173241228.png" alt="image-20200622173241228" loading="lazy"></figure>
+<p>以上就是windows下面python安装配置过程，都只是建议安装方式而已，用的多了自己摸索可能有更加适合自己的编辑器，如sublime3，vim等。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://kinthero.github.io/post/windows-ji-chu-ruan-jian-tui-jian/">
+                  <h3 class="post-title">
+                    Windows基础软件推荐
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
