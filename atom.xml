@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kinthero.github.io/</id>
     <title>kinthero</title>
-    <updated>2020-06-23T10:52:22.895Z</updated>
+    <updated>2020-07-17T13:05:20.638Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kinthero.github.io/"/>
     <link rel="self" href="https://kinthero.github.io/atom.xml"/>
@@ -10,6 +10,47 @@
     <logo>https://kinthero.github.io/images/avatar.png</logo>
     <icon>https://kinthero.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, kinthero</rights>
+    <entry>
+        <title type="html"><![CDATA[小狼毫输入法配置小鹤双拼]]></title>
+        <id>https://kinthero.github.io/post/xiao-lang-hao-shu-ru-fa-pei-zhi-xiao-he-shuang-pin/</id>
+        <link href="https://kinthero.github.io/post/xiao-lang-hao-shu-ru-fa-pei-zhi-xiao-he-shuang-pin/">
+        </link>
+        <updated>2020-07-17T13:02:13.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="小狼毫输入法配置小鹤双拼">小狼毫输入法配置小鹤双拼</h2>
+<p>小狼毫输入法<a href="https://rime.im/">下载地址</a></p>
+<p>安装时选择获取更多输入方案</p>
+<figure data-type="image" tabindex="1"><img src="https://kinthero.github.io//post-images/1594991005461.png" alt="" loading="lazy"></figure>
+<p>可以添加自己想要添加的输入法比如双拼，直接输入<code>double-pinyin</code>，回车就可以，其他的输入方法可以参考<a href="https://github.com/rime/plum#essentials">输入方案</a></p>
+<figure data-type="image" tabindex="2"><img src="https://kinthero.github.io//post-images/1594991019379.png" alt="" loading="lazy"></figure>
+<p>之后<code>ctrl+~</code>就可以切换成为自己想要用的输入法了。</p>
+<p>关于被选词个数和方向，字体大小的，可以看一下<a href="https://jingyan.baidu.com/article/7082dc1c8a69cca40b89bd0b.html">这个</a>。这里简单记录一下修改的文件。</p>
+<p>打开【小狼毫】用户文件夹，<code>default.custom.yaml</code>文件改成</p>
+<pre><code class="language-yaml">customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.14.3
+  generator: &quot;Rime::SwitcherSettings&quot;
+  modified_time: &quot;Fri Jul 17 20:28:47 2020&quot;
+  rime_version: 1.5.3
+patch:
+  &quot;menu/page_size&quot;: 9
+  schema_list:
+    - {schema: double_pinyin_flypy}
+    - {schema: luna_pinyin_simp}
+</code></pre>
+<p><code>weasel.custom.yaml</code>文件改成</p>
+<pre><code class="language-yaml">customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.14.3
+  generator: &quot;Weasel::UIStyleSettings&quot;
+  modified_time: &quot;Fri Jul 17 20:29:50 2020&quot;
+  rime_version: 1.5.3
+patch:
+  &quot;style/horizontal&quot;: true
+  &quot;style/display_tray_icon&quot;: true
+  &quot;style/color_scheme&quot;: lost_temple
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[python环境安装配置--windows]]></title>
         <id>https://kinthero.github.io/post/python-huan-jing-an-zhuang-pei-zhi-windows/</id>
