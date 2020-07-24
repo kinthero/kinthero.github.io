@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>小狼毫输入法配置小鹤双拼 | kinthero</title>
+<title>WSL新配置 | kinthero</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,13 +18,13 @@
 
 
 
-    <meta name="description" content="小狼毫输入法配置小鹤双拼
-小狼毫输入法下载地址
-安装时选择获取更多输入方案
+    <meta name="description" content="WSL配置
 
-可以添加自己想要添加的输入法比如双拼，直接输入double-pinyin，回车就可以，其他的输入方法可以参考输入方案
-
-之后ctrl+~就可以切换成为自己想要用的..." />
+换源
+# back up
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+# change source to ustc
+sudo sed -i 's/archi..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -96,52 +96,75 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">小狼毫输入法配置小鹤双拼</h2>
-            <div class="post-date">2020-07-17</div>
+            <h2 class="post-title">WSL新配置</h2>
+            <div class="post-date">2020-07-24</div>
             
             <div class="post-content" v-pre>
-              <h2 id="小狼毫输入法配置小鹤双拼">小狼毫输入法配置小鹤双拼</h2>
-<p>小狼毫输入法<a href="https://rime.im/">下载地址</a></p>
-<p>安装时选择获取更多输入方案</p>
-<figure data-type="image" tabindex="1"><img src="https://kinthero.github.io//post-images/1594991005461.png" alt="" loading="lazy"></figure>
-<p>可以添加自己想要添加的输入法比如双拼，直接输入<code>double-pinyin</code>，回车就可以，其他的输入方法可以参考<a href="https://github.com/rime/plum#essentials">输入方案</a></p>
-<figure data-type="image" tabindex="2"><img src="https://kinthero.github.io//post-images/1594991019379.png" alt="" loading="lazy"></figure>
-<p>之后<code>ctrl+~</code>就可以切换成为自己想要用的输入法了。</p>
-<p>关于被选词个数和方向，字体大小的，可以看一下<a href="https://jingyan.baidu.com/article/7082dc1c8a69cca40b89bd0b.html">这个</a>。这里简单记录一下修改的文件。</p>
-<p>打开【小狼毫】用户文件夹，<code>default.custom.yaml</code>文件改成</p>
-<pre><code class="language-yaml">customization:
-  distribution_code_name: Weasel
-  distribution_version: 0.14.3
-  generator: &quot;Rime::SwitcherSettings&quot;
-  modified_time: &quot;Fri Jul 17 20:28:47 2020&quot;
-  rime_version: 1.5.3
-patch:
-  &quot;menu/page_size&quot;: 9
-  schema_list:
-    - {schema: double_pinyin_flypy}
-    - {schema: luna_pinyin_simp}
+              <h1 id="wsl配置">WSL配置</h1>
+<hr>
+<h2 id="换源">换源</h2>
+<pre><code class="language-shell"># back up
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+# change source to ustc
+sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+# edit
+sudo vim /etc/apt/sources.list
 </code></pre>
-<p><code>weasel.custom.yaml</code>文件改成</p>
-<pre><code class="language-yaml">customization:
-  distribution_code_name: Weasel
-  distribution_version: 0.14.3
-  generator: &quot;Weasel::UIStyleSettings&quot;
-  modified_time: &quot;Fri Jul 17 20:29:50 2020&quot;
-  rime_version: 1.5.3
-patch:
-  &quot;style/horizontal&quot;: true
-  &quot;style/display_tray_icon&quot;: true
-  &quot;style/color_scheme&quot;: lost_temple
+<p>清华镜像用这个：https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/</p>
+<h2 id="更新">更新</h2>
+<pre><code class="language-shell">sudo apt update | sudo apt -y upgrade
 </code></pre>
+<h2 id="安装配置zsh">安装配置<code>zsh</code></h2>
+<pre><code class="language-shell">
+# install zsh
+sudo apt-get install zsh
+# change default shell to zsh
+sudo chsh -s $(which zsh)
+# install oh-my-zsh
+sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
+# or
+sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;
+# fix permissions to index for auto-complete problem,add to ~/.zshrc file
+ZSH_DISABLE_COMPFIX=true
+# git for plug install
+sudo apt-get install git
+</code></pre>
+<p>安装主题<code>powerlevel10k</code></p>
+<pre><code class="language-shell"># download
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+# edit ~/.zshrc file
+ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;
+# save and run
+p10k configure
+</code></pre>
+<p>修改<code>ls</code>颜色</p>
+<pre><code class="language-shell"># using dircolors.ansi-dark
+curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors
+## edit ~/.zshrc file, set colors for LS_COLORS
+eval `dircolors ~/.dircolors`
+</code></pre>
+<p>安装一些<code>zsh</code>插件</p>
+<pre><code class="language-shell">git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# edit ~/.zshrc file
+plugins=(zsh-autosuggestions zsh-syntax-highlighting)
+</code></pre>
+<p>为了计算显示图形，需要安装[<code>xming</code>][https://sourceforge.net/projects/xming/files/latest/download11]，并且在<code>~/.zshrc</code>写入配置</p>
+<pre><code class="language-shell">echo &quot;export DISPLAY=:0.0&quot; &gt;&gt; ~/.zshrc
+</code></pre>
+<h2 id="参考">参考</h2>
+<p>https://www.ivaylopavlov.com/setting-up-windows-terminal-wsl-and-oh-my-zsh/</p>
+<p>https://blog.joaograssi.com/windows-subsystem-for-linux-with-oh-my-zsh-conemu/</p>
+<p>https://zhuanlan.zhihu.com/p/81622442</p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://kinthero.github.io/post/python-huan-jing-an-zhuang-pei-zhi-windows/">
+                <a href="https://kinthero.github.io/post/xiao-lang-hao-shu-ru-fa-pei-zhi-xiao-he-shuang-pin/">
                   <h3 class="post-title">
-                    python环境安装配置--windows
+                    小狼毫输入法配置小鹤双拼
                   </h3>
                 </a>
               </div>

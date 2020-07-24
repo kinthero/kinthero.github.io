@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kinthero.github.io/</id>
     <title>kinthero</title>
-    <updated>2020-07-17T13:05:20.638Z</updated>
+    <updated>2020-07-24T12:56:26.576Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kinthero.github.io/"/>
     <link rel="self" href="https://kinthero.github.io/atom.xml"/>
@@ -10,6 +10,70 @@
     <logo>https://kinthero.github.io/images/avatar.png</logo>
     <icon>https://kinthero.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, kinthero</rights>
+    <entry>
+        <title type="html"><![CDATA[WSL新配置]]></title>
+        <id>https://kinthero.github.io/post/wsl-xin-pei-zhi/</id>
+        <link href="https://kinthero.github.io/post/wsl-xin-pei-zhi/">
+        </link>
+        <updated>2020-07-24T12:55:28.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="wsl配置">WSL配置</h1>
+<hr>
+<h2 id="换源">换源</h2>
+<pre><code class="language-shell"># back up
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+# change source to ustc
+sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+# edit
+sudo vim /etc/apt/sources.list
+</code></pre>
+<p>清华镜像用这个：https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/</p>
+<h2 id="更新">更新</h2>
+<pre><code class="language-shell">sudo apt update | sudo apt -y upgrade
+</code></pre>
+<h2 id="安装配置zsh">安装配置<code>zsh</code></h2>
+<pre><code class="language-shell">
+# install zsh
+sudo apt-get install zsh
+# change default shell to zsh
+sudo chsh -s $(which zsh)
+# install oh-my-zsh
+sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
+# or
+sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;
+# fix permissions to index for auto-complete problem,add to ~/.zshrc file
+ZSH_DISABLE_COMPFIX=true
+# git for plug install
+sudo apt-get install git
+</code></pre>
+<p>安装主题<code>powerlevel10k</code></p>
+<pre><code class="language-shell"># download
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+# edit ~/.zshrc file
+ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;
+# save and run
+p10k configure
+</code></pre>
+<p>修改<code>ls</code>颜色</p>
+<pre><code class="language-shell"># using dircolors.ansi-dark
+curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors
+## edit ~/.zshrc file, set colors for LS_COLORS
+eval `dircolors ~/.dircolors`
+</code></pre>
+<p>安装一些<code>zsh</code>插件</p>
+<pre><code class="language-shell">git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# edit ~/.zshrc file
+plugins=(zsh-autosuggestions zsh-syntax-highlighting)
+</code></pre>
+<p>为了计算显示图形，需要安装[<code>xming</code>][https://sourceforge.net/projects/xming/files/latest/download11]，并且在<code>~/.zshrc</code>写入配置</p>
+<pre><code class="language-shell">echo &quot;export DISPLAY=:0.0&quot; &gt;&gt; ~/.zshrc
+</code></pre>
+<h2 id="参考">参考</h2>
+<p>https://www.ivaylopavlov.com/setting-up-windows-terminal-wsl-and-oh-my-zsh/</p>
+<p>https://blog.joaograssi.com/windows-subsystem-for-linux-with-oh-my-zsh-conemu/</p>
+<p>https://zhuanlan.zhihu.com/p/81622442</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[小狼毫输入法配置小鹤双拼]]></title>
         <id>https://kinthero.github.io/post/xiao-lang-hao-shu-ru-fa-pei-zhi-xiao-he-shuang-pin/</id>
