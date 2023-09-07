@@ -390,7 +390,7 @@
 <h1 id="welcome-to-kinthers-site">Welcome to Kinther's Site<a class="headerlink" href="#welcome-to-kinthers-site" title="Permanent link">&para;</a></h1>
 <p>This is Kinther's personal site using mkdocs.</p>
 <p>用来提交博客的脚本</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">function</span> <span class="n">post-blog</span> <span class="p">{</span>
+<div class="language-powershell highlight"><span class="filename">$profile</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">function</span> <span class="n">post-blog</span> <span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nb">cd </span><span class="p">/</span><span class="n">local</span><span class="p">/</span><span class="n">path</span><span class="p">/</span><span class="n">to</span><span class="p">/</span><span class="n">site</span><span class="p">/</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="nv">$CurrentTime</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Date</span><span class="p">).</span><span class="n">ToString</span><span class="p">(</span><span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span><span class="p">)</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">git</span> <span class="n">add</span> <span class="p">.</span>
