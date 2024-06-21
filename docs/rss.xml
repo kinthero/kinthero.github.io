@@ -1,17 +1,30 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Kinther's Blog</title><link>https://kinthero.github.io</link><description>多更新呀</description><copyright>Kinther's Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://kinthero.github.io</link></image><lastBuildDate>Fri, 21 Jun 2024 15:58:31 +0000</lastBuildDate><managingEditor>Kinther's Blog</managingEditor><ttl>60</ttl><webMaster>Kinther's Blog</webMaster><item><title>测试文档</title><link>https://kinthero.github.io/post/ce-shi-wen-dang.html</link><description>Hello World&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Kinther's Blog</title><link>https://kinthero.github.io</link><description>多更新呀</description><copyright>Kinther's Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://kinthero.github.io</link></image><lastBuildDate>Fri, 21 Jun 2024 16:09:38 +0000</lastBuildDate><managingEditor>Kinther's Blog</managingEditor><ttl>60</ttl><webMaster>Kinther's Blog</webMaster><item><title>测试文档</title><link>https://kinthero.github.io/post/ce-shi-wen-dang.html</link><description># Gmeek 测试使用&#13;
 &#13;
 ---&#13;
+&#13;
+## 测试一下代码块&#13;
 &#13;
 ```python&#13;
 for i in range(10):&#13;
     print('hello')&#13;
 ```&#13;
 &#13;
+## 测试一下勾选框&#13;
+&#13;
+- [] 待完成&#13;
+- [x] 已经完成&#13;
+&#13;
+## 测试内容引用&#13;
+&#13;
 &gt; hahaha&#13;
+&#13;
+## 测试文字格式&#13;
 &#13;
 ~this~ $is$ a demo&#13;
 &#13;
+## 测试公式输入&#13;
+&#13;
 $$E = mc^2$$&#13;
 &#13;
----。</description><guid isPermaLink="true">https://kinthero.github.io/post/ce-shi-wen-dang.html</guid><pubDate>Fri, 21 Jun 2024 15:48:21 +0000</pubDate></item></channel></rss>
+。</description><guid isPermaLink="true">https://kinthero.github.io/post/ce-shi-wen-dang.html</guid><pubDate>Fri, 21 Jun 2024 15:48:21 +0000</pubDate></item></channel></rss>
