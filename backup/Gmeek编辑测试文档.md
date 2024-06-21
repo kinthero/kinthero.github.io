@@ -53,3 +53,10 @@ graph LR
 A-->B
 ```
 
+## 测试文本折叠
+
+<details>
+<summary>折叠文本</summary>
+这是被折叠的文本
+这也是被折叠的文本
+</details>
