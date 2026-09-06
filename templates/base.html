@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+      {% block title %}
+        {{ config.title }}
+      {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
+  </head>
+
+  <body class="{% if current_path is starting_with(pat="/handbook") %}layout-handbook{% else %}layout-blog{% endif %}">
+    <header class="site-header">
+      <a class="site-title" href="{{ config.base_url }}">
+        {{config.title}}
+      </a>
+
+      <nav>
+        <a href="{{ get_url(path='@/handbook/_index.md') }}">
+          Handbook
+        </a>
+      </nav>
+    </header>
+
+    <div class="layout">
+
+      <aside class="sidebar">
+        {% block sidebar %}{% endblock %}
+      </aside>
+
+      <main>
+        {% block content %}{% endblock %}
+      </main>
+
+      <aside class="toc">
+        {% block toc %} {% endblock %}
+      </aside>
+      
+    </div>
+
+    <footer>
+      <p>© {{ now() | date(format="%Y") }} {{config.title}}</p>
+    </footer>
+  </body>
+</html>

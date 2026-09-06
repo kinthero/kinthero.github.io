@@ -1,5 +1,7 @@
 # The URL the site will be built for
 base_url = "https://kinthero.github.io"
+title = "Kinther"
+description = ""
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -10,7 +12,7 @@ build_search_index = true
 [markdown]
 
 [markdown.highlighting]
-theme = "catppuccin-mocha"
+theme = "catppuccin-latte"
 
 [extra]
 # Put all your custom variables here

@@ -1,0 +1,31 @@
+{% set current_section = section | default(value=get_section(path="handbook/_index.md")) %}
+
+<nav>
+  <ul>
+    {% for subsection_path in current_section.subsections %}
+      {% set subsection = get_section(path=subsection_path) %}
+
+      <li class="sidebar-group">
+        <span class="sidebar-group-title">{{ subsection.title }}</span>
+        
+        {% if subsection.pages %}
+          <ul>
+            {% for page in subsection.pages %}
+            <li class="{% if current_path == page.path %}active{% endif %}">
+              <a href="{{ page.permalink }}">{{ page.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+
+    {% for page in current_section.pages %}
+    <li class="{% if current_path == page.path %}active{% endif %}">
+      <a href="{{ page.permalink }}">
+        {{ page.title }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

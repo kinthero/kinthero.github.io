@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+  {% include "handbook/partials/sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ section.title }}</h1>
+  {{ section.content | safe }}
+{% endblock %}
+
+{% block toc %}
+{% if section.toc %}
+<nav class="toc">
+  <p class="toc-title">Table of contents</p>
+  <ul>
+    {% for h1 in section.toc %}
+    <li><a href="{{ h1.permalink }}">{{ h1.title }}</a></li>
+      {% if h1.children %}
+      <ul>
+        {% for h2 in h1.children %}
+        <li>
+          <a href="{{ h2.permalink }}" class="toc-link">
+            {{ h2.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+{% endblock %}
