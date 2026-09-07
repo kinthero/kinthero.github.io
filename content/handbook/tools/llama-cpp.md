@@ -1,7 +1,6 @@
 +++
 title = "llama.cpp"
 +++
-# llama.cpp 
 
 ## 安装
 

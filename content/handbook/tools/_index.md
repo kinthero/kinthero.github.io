@@ -1,4 +1,5 @@
 +++
 title = "tools"
-sort_by = "title"
+weight = 1
+template = "handbook/section.html"
 +++

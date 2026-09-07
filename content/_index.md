@@ -1,9 +1,4 @@
 +++
 title = "Kinther"
-template = "index.html"
+redirect_to = "blog"
 +++
-
-# Kinther
-
-我的知识与实践。
-

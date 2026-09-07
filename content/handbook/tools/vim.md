@@ -1,7 +1,6 @@
 +++
 title = 'vim'
 +++
-# vim
 
 编辑文件 `~/.vimrc` 。
 

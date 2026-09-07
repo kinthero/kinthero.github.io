@@ -5,7 +5,7 @@ page_template = "handbook/page.html"
 sort_by = "title"
 +++
 
-我的只是手册
+我的知识手册
 
 ## hello
 
