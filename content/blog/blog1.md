@@ -1,6 +1,8 @@
 +++
 title = "blog1"
 date = 2026-01-01
+[taxonomies]
+tags = ["zola", "建站"]
 +++
 
 ## header 2

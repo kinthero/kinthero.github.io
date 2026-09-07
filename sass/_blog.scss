@@ -1,0 +1,26 @@
+.layout-blog {
+  .layout {
+    grid-template-columns: minmax(0, 760px);
+    justify-content: center;
+  }
+
+  .sidebar,
+  .toc {
+    display: none;
+  }
+}
+
+.post-tags {
+  font-size: 13px;
+}
+
+.post-tags a {
+  margin-right: 8px;
+  color: #888;
+  text-decoration: none;
+}
+
+.post-tags a:hover {
+  color: #2563eb;
+}
+

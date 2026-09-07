@@ -1,0 +1,21 @@
+{% component tree.node(section, current_path) %}
+  <ul>
+    {% for subsection_path in section.subsections %}
+      {% set sub = get_section(path=subsection_path) %}
+      <li>
+        <details {% if current_path is starting_with(pat=sub.path) %}open{% endif %}>
+          <summary>
+            <a href="{{ sub.permalink }}" {% if current_path == sub.path %}class="active"{% endif %}>{{ sub.title }}</a>
+          </summary>
+          {{<tree.node section={sub} current_path={current_path} />}}
+        </details>
+      </li>
+    {% endfor %}
+
+    {% for page in section.pages %}
+      <li>
+        <a href="{{ page.permalink }}" {% if current_path == page.path %}class="active"{% endif %}>{{ page.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endcomponent tree.node %}

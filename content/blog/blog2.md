@@ -1,6 +1,8 @@
 +++
 title = "blog2"
 date = 2026-02-01
+[taxonomies]
+tags = ["vim", "建站"]
 +++
 
 ## header 2

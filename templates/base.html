@@ -18,12 +18,18 @@
         {{config.title}}
       </a>
 
-      <nav>
-        <a href="{{ get_url(path='@/handbook/_index.md') }}">
-          Handbook
-        </a>
-        <a href="{{ get_url(path='@/blog/_index.md') }}">
+      <nav class="site-nav">
+        <a href="{{ get_url(path='@/blog/_index.md') }}"
+           {% if current_path is starting_with(pat="/blog") or current_path is starting_with(pat="/tags") %}
+           class="active"
+           {% endif %}>
           Blog
+        </a>
+        <a href="{{ get_url(path='@/handbook/_index.md') }}"
+           {% if current_path is starting_with(pat="/handbook") %}
+           class="active"
+           {% endif %}>
+          Handbook
         </a>
       </nav>
     </header>

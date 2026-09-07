@@ -2,6 +2,8 @@
 title = 'vim'
 +++
 
+## 配置
+
 编辑文件 `~/.vimrc` 。
 
 ```conf
