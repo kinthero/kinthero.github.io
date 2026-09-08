@@ -1,20 +1,24 @@
 {% extends "base.html" %}
 
-{% block title %}
-  {{ page.title }} · {{config.title}}
-{% endblock title %}
-
 {% block content %}
-<article>
-  <h1>{{ page.title }}</h1>
-  {% if page.taxonomies.tags %}
-    <p class="post-tags">
-    {% for tag in page.taxonomies.tags %}
-      <a href="{{ get_taxonomy_url(kind='tags', term=tag) }}"> # {{ tag }}</a>
-    {% endfor %}
-    </p>
+  <article>
+    <h1>{{ page.title }}</h1>
+    {% if page.taxonomies.tags %}
+      <p class="post-tags">
+      {% for tag in page.taxonomies.tags %}
+        <a href="{{ get_taxonomy_url(kind='tags', term=tag) }}"> # {{ tag }}</a>
+      {% endfor %}
+      </p>
+    {% endif %}
+
+    {{ page.content | safe }}
+  </article>
+
+  {% if page.extra.math | default(value=false) %}
+    {% include "partials/math.html" %}
   {% endif %}
 
-  {{ page.content | safe }}
-</article>
+  {% if page.content is containing(pat='data-lang="mermaid"') %}
+    {% include "partials/mermaid.html" %}
+  {% endif %}
 {% endblock content %}

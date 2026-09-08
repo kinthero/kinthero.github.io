@@ -1,12 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-      {% block title %}
-        {{ config.title }}
-      {% endblock %}
+      {{ page?.title or section?.title or term?.name or taxonomy?.name or config.title }}
     </title>
 
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
