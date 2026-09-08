@@ -171,6 +171,19 @@
   color: #555;
 }
 
+.search-input {
+  font: inherit;
+  width: 100%;
+  max-width: 480px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.search-result li {
+  margin: 8px 0;
+}
+
 footer {
   flex-shrink: 0;
   padding: 40px 24px;

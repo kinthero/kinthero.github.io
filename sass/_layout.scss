@@ -32,8 +32,3 @@
     padding-bottom: 16px;
   }
 }
-
-.layout-handbook .layout:not(:has(.toc nav)) {
-  grid-template-columns: 240px minmax(0, 760px);
-  justify-content: center;
-}

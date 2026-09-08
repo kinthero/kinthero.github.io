@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{ page.title }} - {{ config.title }}
+{% endblock title %}
+
+{% block content %}
+<article>
+  <h1>{{ page.title }}</h1>
+  <input type="search" class="search-input" id="search-input" placeholder="" autofocus>
+  <p class="search-status" id="search-status"></p>
+  <ul class="search-results" id="search-results"></ul>
+</article>
+
+<script src="{{ get_url(path='search_index.' ~ lang ~ '.js') }}"></script>
+<script src="{{ get_url(path='js/search.js') }}"></script>
+{% endblock content %}

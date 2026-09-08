@@ -1,4 +1,4 @@
 +++
 title = "Kinther"
-redirect_to = "handbook"
+redirect_to = "blog"
 +++
