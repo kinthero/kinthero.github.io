@@ -10,6 +10,18 @@
   box-sizing: border-box;
 }
 
+.layout > .sidebar {
+  grid-column: 1;
+}
+
+.layout > main {
+  grid-column: 2;
+}
+
+.layout > .toc {
+  grid-column: 3;
+}
+
 @media (max-width: 1200px) {
   .layout {
     grid-template-columns: 220px minmax(0, 1fr);

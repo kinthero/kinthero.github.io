@@ -19,3 +19,57 @@
   color: #2563eb;
 }
 
+.post-list {
+  list-sytle: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.post-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 8px;
+  margin: 0 -8px;
+  border-radius: 6px;
+}
+
+.post-row:hover {
+  background: #f7f7f8;
+}
+
+.post-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2328;
+  text-decoration: none;
+}
+
+.post-row:hover .post-title {
+  color: #2563eb;
+}
+
+.post-meta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.meta-tag,
+.meta-date {
+  font-size: 12px;
+  color: #999;
+  text-decoration: none;
+}
+
+.meta-tag:hover {
+  color: #2563eb;
+}
+
+.meta-data {
+  font-variant-numeric: tabular-nums;
+  min-width: 90px;
+  text-align: right;
+}

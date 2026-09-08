@@ -4,3 +4,5 @@ template = "blog/section.html"
 page_template = "blog/page.html"
 sort_by = "date"
 +++
+
+Kinther's Blog
