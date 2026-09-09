@@ -5,20 +5,6 @@
   }
 }
 
-.post-tags {
-  font-size: 13px;
-}
-
-.post-tags a {
-  margin-right: 8px;
-  color: #888;
-  text-decoration: none;
-}
-
-.post-tags a:hover {
-  color: #2563eb;
-}
-
 .post-list {
   list-sytle: none;
   padding: 0;
@@ -72,4 +58,10 @@
   font-variant-numeric: tabular-nums;
   min-width: 90px;
   text-align: right;
+}
+
+.post-page-meta {
+  display: flex;
+  gap: 16px;
+  margin: -16px 0 28px;
 }

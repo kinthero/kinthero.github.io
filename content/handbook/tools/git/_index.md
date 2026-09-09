@@ -1,5 +1,6 @@
 +++
 title = "git"
 weight = 1
-template = "handbook/section.html"
+template = "docs/section.html"
+sort_by = "title"
 +++

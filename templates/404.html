@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - {{ config.title }}</title>
+    <link rel="stylesheet" href="{{ get_url(path='main.css', cachebust=true) }}">
+  </head>
+  <body class="layout-blog">
+    <header class="site-header">
+      <a class="site-title" href="{{ config.base_url }}">{{ config.title }}</a>
+    </header>
+    <div class="layout">
+      <main>
+        <article>
+          <h1>404</h1>
+          <p>这个页面不存在，可能地址错了，也可能它还没被写出来。</p>
+          <p>
+            <a href="{{ get_url(path='@/blog/_index.md') }}">Blog</a>
+            <a href="{{ get_url(path='@/handbook/_index.md') }}">Handbook</a>
+          </p>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

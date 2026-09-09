@@ -1,7 +1,7 @@
 +++
 title = "Handbook"
-template = "handbook/section.html"
-page_template = "handbook/page.html"
+template = "docs/section.html"
+page_template = "docs/page.html"
 sort_by = "title"
 +++
 

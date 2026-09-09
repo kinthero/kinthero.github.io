@@ -8,7 +8,10 @@
       {{ page?.title or section?.title or term?.name or taxonomy?.name or config.title }}
     </title>
 
-    <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
+    <link rel="stylesheet" href="{{ get_url(path='main.css', cachebust=true) }}">
+    {% block rss %}
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
+    {% endblock rss %}
   </head>
 
   <body class="{% if current_path is starting_with(pat="/handbook") %}layout-handbook{% else %}layout-blog{% endif %}">

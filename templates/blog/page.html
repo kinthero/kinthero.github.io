@@ -3,13 +3,12 @@
 {% block content %}
   <article>
     <h1>{{ page.title }}</h1>
-    {% if page.taxonomies.tags %}
-      <p class="post-tags">
-      {% for tag in page.taxonomies.tags %}
-        <a href="{{ get_taxonomy_url(kind='tags', term=tag) }}"> # {{ tag }}</a>
-      {% endfor %}
-      </p>
-    {% endif %}
+    <p class="post-page-meta">
+    <time class="meta-date">{{ page.date | date(format="%Y-%m-%d") }}</time>
+    {% for tag in page.taxonomies?.tags or [] %}
+      <a class="meta-tag" href="{{ get_taxonomy_url(kind='tags', term=tag) }}"># {{ tag }}</a>
+    {% endfor %}
+    </p>
 
     {{ page.content | safe }}
   </article>
