@@ -55,6 +55,24 @@ main img {
   border-radius: 6px;
 }
 
+blockquote {
+  margin: 1em 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--ink-mute);
+  color: var(--ink-soft);
+}
+
+:where(article) a {
+  color: inherit;
+  text-decoration-color: var(--ink-mute);
+  text-underline-offset: 3px;
+}
+
+:where(article) a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --ink: #e8e8e8;
