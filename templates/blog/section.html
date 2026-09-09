@@ -13,10 +13,10 @@
         {{ page.title }}
       </a>
       <span class="post-meta">
+        <time class="meta-date">{{ page.date | date(format="%Y-%m-%d") }}</time>
         {% for tag in page.taxonomies?.tags or [] %}
         <a class="meta-tag" href="{{ get_taxonomy_url(kind='tags', term=tag) }}"># {{ tag }}</a>
         {% endfor %}
-        <time class="meta-date">{{ page.date | date(format="%Y-%m-%d") }}</time>
       </span>
     </li>
     {% endfor %}

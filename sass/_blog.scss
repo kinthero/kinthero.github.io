@@ -5,28 +5,35 @@
   }
 }
 
+.layout-blog main > h1 {
+  font-size: 1.9em;
+  letter-spacing: -0.5px;
+  margin: 0 0 6px;
+}
+
+.section-intro {
+  color: var(--ink-mute);
+}
+
 .post-list {
-  list-sytle: none;
+  list-style: none;
   padding: 0;
-  margin: 20px 0 0;
+  margin: 30px 0 0;
 }
 
 .post-row {
   display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: baseline;
-  gap: 16px;
-  padding: 10px 8px;
-  margin: 0 -8px;
-  border-radius: 6px;
+  gap: 6px;
+  padding: 16px 0px;
+  border-bottom: 1px solid var(--line);
 }
 
-.post-row:hover {
-  background: var(--bg-soft);
+.post-row:last-child {
+  border-bottom: none;
 }
 
 .post-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
@@ -40,12 +47,12 @@
   display: inline-flex;
   align-items: baseline;
   gap: 10px;
-  white-space: nowrap;
+  flex-wrap: wrap;
 }
 
 .meta-tag,
 .meta-date {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--ink-mute);
   text-decoration: none;
 }
@@ -54,10 +61,8 @@
   color: var(--accent);
 }
 
-.meta-data {
+.meta-date {
   font-variant-numeric: tabular-nums;
-  min-width: 90px;
-  text-align: right;
 }
 
 .post-page-meta {
