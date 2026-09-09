@@ -18,6 +18,7 @@ taxonomies = [{ name = "tags" }]
 [markdown.highlighting]
 light_theme = "catppuccin-latte"
 dark_theme = "catppuccin-mocha"
+style = "class"
 
 [extra]
 # Put all your custom variables here

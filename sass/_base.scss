@@ -47,6 +47,24 @@ main h1 {
 
 pre {
   overflow-x: auto;
+  padding: 0.75em 1em;
+  margin: 0.8em 0;
+  border-radius: 8px;
+}
+
+.giallo-l {
+  display: inline-block;
+  min-height: 1lh;
+  width: 100%;
+}
+
+.giallo-ln {
+  user-select: none;
+  margin-right: 0.4em;
+  padding: 0.4em;
+  min-width: 3ch;
+  text-align: right;
+  opacity: 0.8;
 }
 
 main img {
@@ -73,14 +91,31 @@ blockquote {
   text-decoration-color: var(--accent);
 }
 
+@mixin dark-tokens {
+  color-scheme: dark;
+  --ink: #e8e8e8;
+  --ink-soft: #b8b8b8;
+  --ink-mute: #8b8b8b;
+  --bg: #191919;
+  --bg-soft: #262626;
+  --line: #3a3a3a;
+  --accent: #6ea8fe;
+  --accent-soft: #1c2a42;
+}
+
+/* 系统暗且用户没强制亮 → 暗 */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --ink: #e8e8e8;
-    --ink-soft: #b8b8b8;
-    --ink-mute: #8b8b8b;
-    --bg: #191919;
-    --line: #3a3a3a;
-    --accent: #6ea8fe;
-    --accent-soft: #1c2a42;
+  :root:not([data-theme="light"]) {
+    @include dark-tokens;
   }
+}
+
+/* 用户强制暗 */
+:root[data-theme="dark"] {
+  @include dark-tokens;
+}
+
+/* 用户强制亮（哪怕系统是暗的） */
+:root[data-theme="light"] {
+  color-scheme: light;
 }

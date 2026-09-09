@@ -8,6 +8,12 @@
       {{ page?.title or section?.title or term?.name or taxonomy?.name or config.title }}
     </title>
 
+    <link id="giallo-light" rel="stylesheet" href="{{ get_url(path='giallo-light.css') }}"
+media="(prefers-color-scheme: light)">
+    <link id="giallo-dark" rel="stylesheet" href="{{ get_url(path='giallo-dark.css') }}" media="(
+prefers-color-scheme: dark)">
+    <script src="{{ get_url(path='js/theme.js') }}"></script>
+    <script src="{{ get_url(path='js/code-copy.js') }}" defer></script>
     <link rel="stylesheet" href="{{ get_url(path='main.css', cachebust=true) }}">
     {% block rss %}
     <link rel="alternate" type="application/atom+xml" title="Atom" href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
@@ -34,6 +40,7 @@
           Handbook
         </a>
         <a href="{{ get_url(path='@/search.md') }}">Search</a>
+        <button id="theme-toggle" class="theme-btn" aria-label="切换主题"></button>
       </nav>
     </header>
 

@@ -186,6 +186,50 @@
   margin: 8px 0;
 }
 
+.theme-btn {
+  font: inherit;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: none;
+  color: var(--ink-soft);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.theme-btn:hover {
+  border-color: var(--ink-mute);
+  color: var(--ink);
+}
+
+.code-wrap {
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.4em;
+  right: 0.4em;
+  font-size: 12px;
+  padding: 2px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--ink-mute);
+  cursor: pointer;
+  opacity: 0.55;
+}
+
+.code-wrap:hover .copy-btn,
+.copy-btn:focus-visible {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 footer {
   flex-shrink: 0;
   padding: 40px 24px;
