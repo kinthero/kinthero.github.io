@@ -20,7 +20,7 @@
 .site-nav a {
   text-decoration: none;
   color: var(--ink-soft);
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 6px 12px;
   border-radius: 6px;
 }
@@ -89,7 +89,7 @@
   position: sticky;
   top: 20px;
   align-self: start;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.5;
   padding-right: 16px;
   border-right: 1px solid var(--line);
@@ -133,7 +133,7 @@
 
 .toc nav > ul > li > a {
   display: block;
-  font-size: 12px;
+  font-size: 0.8125rem;
   color: var(--ink-mute);
   text-decoration: none;
   padding: 3px 0;
@@ -145,7 +145,7 @@
 
 .toc nav > ul > li > ul > li > a {
   display: block;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--ink-mute);
   text-decoration: none;
   padding: 3px 0;
@@ -157,7 +157,7 @@
 
 .toc-link {
   display: block;
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.5;
   padding: 4px 8px;
   text-decoration: none;
@@ -209,7 +209,7 @@
   position: absolute;
   top: 0.4em;
   right: 0.4em;
-  font-size: 12px;
+  font-size: 0.75rem;
   padding: 2px 10px;
   border: 1px solid var(--line);
   border-radius: 6px;
