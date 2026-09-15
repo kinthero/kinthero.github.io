@@ -50,7 +50,3 @@ bindings = [
 shell = { program = "tmux", args = ["new-session", "-A", "-s", "alacritty"] }
 ```
 
-我的终端长这样子
-
-![alacritty 配置效果](alacritty.png)
-
