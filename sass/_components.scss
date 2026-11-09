@@ -124,6 +124,15 @@
   align-self: start;
 }
 
+.toc-title {
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-mute);
+  margin: 0 0 8px;
+}
+
 
 .toc ul {
   list-style: none;

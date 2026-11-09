@@ -5,8 +5,16 @@
   }
 }
 
+.layout-blog .layout {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+}
+
+.layout-blog main {
+  grid-column: 1;
+}
+
 .layout-blog main > h1 {
-  font-size: 1.9em;
   letter-spacing: -0.5px;
   margin: 0 0 6px;
 }
