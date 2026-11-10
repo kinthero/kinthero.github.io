@@ -1,7 +1,8 @@
 @media print {
   .sidebar,
   .toc,
-  .site-nav {
+  .site-nav,
+  .code-header {
     display: none;
   }
 

@@ -1,15 +1,14 @@
-$bp-lg: 1200px;
+$bp-lg: 1280px;
 $bp-sm: 800px;
 
 .layout {
   flex: 1;
   display: grid;
-  grid-template-columns: 240px minmax(0, 760px) 220px;
-  gap: 40px;
-  padding: 40px 16px;
-  max-width: 1320px;
+  grid-template-columns: clamp(280px, 18vw, 380px) minmax(0, 760px) 200px;
+  gap: 56px;
+  justify-content: space-between;
+  padding: 40px 24px;
   width: 100%;
-  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -27,7 +26,7 @@ $bp-sm: 800px;
 
 @media (max-width: $bp-lg) {
   .layout {
-    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-columns: clamp(280px, 18vw, 380px) minmax(0, 1fr);
   }
   .toc {
     display: none;

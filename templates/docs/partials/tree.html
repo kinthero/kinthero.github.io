@@ -4,8 +4,8 @@
       {% set sub = get_section(path=subsection_path) %}
       <li>
         <details {% if current_path is starting_with(pat=sub.path) %}open{% endif %}>
-          <summary>
-            <a href="{{ sub.permalink }}" {% if current_path == sub.path %}class="active"{% endif %}>{{ sub.title }}</a>
+          <summary {% if current_path == sub.path %}class="active"{% endif %}>
+            <a href="{{ sub.permalink }}" title="{{ sub.title }}">{{ sub.title }}</a>
           </summary>
           {{<tree.node section={sub} current_path={current_path} />}}
         </details>
@@ -14,7 +14,7 @@
 
     {% for page in section.pages %}
       <li>
-        <a href="{{ page.permalink }}" {% if current_path == page.path %}class="active"{% endif %}>{{ page.title }}</a>
+        <a href="{{ page.permalink }}" {% if current_path == page.path %}class="active"{% endif %} title="{{ page.title }}">{{ page.title }}</a>
       </li>
     {% endfor %}
   </ul>

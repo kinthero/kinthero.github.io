@@ -5,7 +5,14 @@ document.querySelectorAll("pre.giallo").forEach((pre) => {
   const wrap = document.createElement("div");
   wrap.className = "code-wrap";
   pre.parentNode.insertBefore(wrap, pre);
-  wrap.appendChild(pre);
+
+  const header = document.createElement("div");
+  header.className = "code-header";
+
+  const lang = document.createElement("span");
+  lang.className = "code-lang";
+  const langName = code.dataset.lang;
+  lang.textContent = langName && langName !== "plain" ? langName : "";
 
   const btn = document.createElement("button");
   btn.type = "button";
@@ -18,5 +25,8 @@ document.querySelectorAll("pre.giallo").forEach((pre) => {
     setTimeout(() => { btn.textContent = "复制"; }, 1500);
   });
 
-  wrap.appendChild(btn);
+  header.appendChild(lang);
+  header.appendChild(btn);
+  wrap.appendChild(header);
+  wrap.appendChild(pre);
 });

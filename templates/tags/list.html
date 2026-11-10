@@ -1,14 +1,16 @@
-{% extends "base.html" %}
+   {% extends "base.html" %}
 
-{% block content %}
-<h1>{{ taxonomy.name | capitalize }}</h1>
-<ul>
-  {% for t in terms %}
-  <li>
-    <a href="{{ t.permalink }}">{{ t.name }}</a> ({{ t.pages | length }})
-  </li>
-  {% endfor %}
-</ul>
-{% endblock content %}
+   {% block content %}
+   <h1>{{ taxonomy.name | capitalize }}</h1>
 
-
+   <ul class="post-list">
+     {% for t in terms %}
+     <li class="post-row">
+       <a class="post-title" href="{{ t.permalink }}">{{ t.name }}</a>
+       <span class="post-meta">
+         <span class="meta-date">{{ t.pages | length }} 篇</span>
+       </span>
+     </li>
+     {% endfor %}
+   </ul>
+   {% endblock content %}

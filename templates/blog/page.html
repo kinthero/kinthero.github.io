@@ -13,6 +13,23 @@
     {{ page.content | safe }}
   </article>
 
+  <nav class="post-nav">
+    <div class="post-nav-item">
+      {% if page.lower %}
+        <span class="post-nav-label">上一篇</span>
+        <a href="{{ page.lower.permalink }}">← {{ page.lower.title }}</a>
+      {% endif %}
+    </div>
+    <div class="post-nav-item next">
+      {% if page.higher %}
+        <span class="post-nav-label">下一篇</span>
+        <a href="{{ page.higher.permalink }}">{{ page.higher.title }} →</a>
+      {% endif %}
+    </div>
+  </nav>
+
+  <a class="back-to-blog" href="{{ get_url(path='@/blog/_index.md') }}">← 返回 Blog</a>
+
   {% if page.extra.math | default(value=false) %}
     {% include "partials/math.html" %}
   {% endif %}

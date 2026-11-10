@@ -1,14 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 - {{ config.title }}</title>
-    <link rel="stylesheet" href="{{ get_url(path='main.css', cachebust=true) }}">
+    <link
+      rel="stylesheet"
+      href="{{ get_url(path='main.css', cachebust=true) }}"
+    />
   </head>
   <body class="layout-blog">
     <header class="site-header">
-      <a class="site-title" href="{{ config.base_url }}">{{ config.title }}</a>
+      <div class="header-inner">
+        <a class="site-title" href="{{ config.base_url }}">
+          {{ config.title }}
+        </a>
+      </div>
     </header>
     <div class="layout">
       <main>
